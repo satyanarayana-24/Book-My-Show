@@ -15,8 +15,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-               checkout scmGit(branches: [[name: '*/main']], extensions: [], 
-userRemoteConfigs: [[url: 'https://github.com/ASKFORTESAWS/Book-My-Show.git']])
+              checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'gitCred', url: 'https://github.com/satyanarayana-24/Book-My-Show.git']])
                 sh 'ls -la'  // Verify files after checkout
             }
         }
